@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Órbita Records — Productora Musical</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.3/p5.min.js"></script>
+
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <nav>
+    <a class="nav-logo" href="#top">Órbita <span>Records</span></a>
+    <ul class="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#clientes">Clientes</a></li>
+      <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-bg-text">ORBITA</div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="label">Buenos Aires — Argentina</div>
+        <h1>Órbita <em>Records</em></h1>
+        <p>Productora musical con más de 15 años en el mercado latinoamericano. Trabajamos con los artistas más importantes del país. Música que pone ideas en órbita.</p>
+        <div class="hero-btns">
+          <a href="#servicios" class="btn-primary">Nuestros servicios</a>
+          <a href="#contacto" class="btn-outline">Trabajemos juntos</a>
+        </div>
+      </div>
+      <div class="hero-canvas-area">
+        <canvas id="disco-canvas" width="380" height="380"></canvas>
+        <p class="disco-label">
+          🏆 Este es el disco más exitoso del mes en Órbita<br />
+          <strong>Ameri</strong>
+        </p>
+      </div>
+    </div>
+    <div class="scroll-hint">Scroll</div>
+  </section>
+
+  <section id="servicios">
+    <div class="servicios-inner">
+      <div class="servicios-header">
+        <div>
+          <div class="section-label">Lo que hacemos</div>
+          <h2 class="section-title">Servi<em>cios</em></h2>
+        </div>
+        <p>Desde la idea hasta el master final. Acompañamos cada proyecto con criterio artístico y precisión técnica.</p>
+      </div>
+      <div class="servicios-grid">
+        <div class="servicio-item">
+          <div class="servicio-num">01</div>
+          <h3>Producción Musical</h3>
+          <p>Composición, arreglos y producción integral de proyectos musicales. Del boceto al producto terminado con identidad propia.</p>
+        </div>
+        <div class="servicio-item">
+          <div class="servicio-num">02</div>
+          <h3>Jingles &amp; Publicidad</h3>
+          <p>Música original para campañas publicitarias, spots de radio y TV. Creamos el sonido que hace recordar tu marca.</p>
+        </div>
+        <div class="servicio-item">
+          <div class="servicio-num">03</div>
+          <h3>Cine, TV &amp; Videojuegos</h3>
+          <p>Scoring, música incidental y diseño sonoro para cine, series, documentales y videojuegos. Sonidos que construyen mundos.</p>
+        </div>
+        <div class="servicio-item">
+          <div class="servicio-num">04</div>
+          <h3>Mixing &amp; Mastering</h3>
+          <p>Mezcla y masterización profesional con oído crítico y estándares internacionales. Tu música lista para cualquier plataforma.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <div class="proyectos-header">
+      <div class="section-label">Selección de trabajos</div>
+      <h2 class="section-title">Pro<em>yectos</em></h2>
+      <p>Proyectos para artistas y marcas de Argentina y Latinoamérica. Publicidad, TV, cine y más.</p>
+    </div>
+    <div class="carousel-wrap" id="carousel-wrap">
+      <canvas id="carousel-canvas"></canvas>
+    </div>
+  </section>
+
+  <section id="nosotros">
+    <div class="nosotros-inner">
+      <div class="nosotros-text">
+        <div class="section-label">El equipo</div>
+        <h2 class="section-title">Nos<em>otros</em></h2>
+        <p>Somos <strong>Órbita Records</strong>, una productora musical fundada en Buenos Aires con más de 15 años de experiencia en el mercado latinoamericano.</p>
+        <p>Nos especializamos en crear música que trasciende géneros y formatos — desde campañas publicitarias hasta bandas de sonido, pasando por producción de artistas de todo el país.</p>
+        <p>Nuestro enfoque combina <strong>sensibilidad artística con precisión técnica</strong>, poniendo cada proyecto en órbita con la energía que merece.</p>
+        <div class="nosotros-stats">
+          <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Años de experiencia</div></div>
+          <div class="stat"><div class="stat-num">300+</div><div class="stat-label">Proyectos realizados</div></div>
+          <div class="stat"><div class="stat-num">LATAM</div><div class="stat-label">Alcance regional</div></div>
+          <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Géneros musicales</div></div>
+        </div>
+      </div>
+      <div class="team-cards">
+        <div class="team-card">
+          <div class="member-img">
+        <img src="imgs/rama.jpeg" alt="Nombre del Integrante">
+      </div>
+          <div class="team-info">
+            <h4>Ramiro Sosa</h4>
+            <span>Director Musical &amp; Productor</span>
+            <p>Músico integral con vasta experiencia en producción, composición y performance. La energía creativa detrás de Órbita Records.</p>
+          </div>
+        </div>
+        <div class="team-card">
+                    <div class="member-img">
+        <img src="imgs/luca.jpeg" alt="Nombre del Integrante">
+      </div>
+          <div class="team-info">
+            <h4>Luca Repetto</h4>
+            <span>Lic. en Composición &amp; Productora</span>
+            <p>Licenciada en composición musical. Aporta rigor académico y creatividad al proceso de producción de cada proyecto.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="member-img">
+        <img src="imgs/mate.jpeg" alt="Nombre del Integrante">
+      </div>
+          <div class="team-info">
+            <h4>Mateo Soto Gauna</h4>
+            <span>Ingeniero de Sonido &amp; Mezcla</span>
+            <p>Especialista en mixing y mastering con estándares internacionales. El oído técnico que pone el brillo final a cada track.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="clientes">
+    <div class="clientes-header">
+      <div class="section-label">Confiaron en nosotros</div>
+      <h2 class="section-title">Clien<em>tes</em></h2>
+      <p>Marcas y artistas con los que hemos trabajado a lo largo de los años.</p>
+    </div>
+    <canvas id="clientes-canvas"></canvas>
+  </section>
+
+  <section id="contacto">
+    <div class="contacto-inner">
+      <div class="contacto-info">
+        <div class="section-label">Hablemos</div>
+        <h2 class="section-title">Con<em>tacto</em></h2>
+        <p>¿Tenés un proyecto en mente? ¿Querés saber más sobre nuestros servicios? Escribinos y lo ponemos en órbita juntos.</p>
+        <div class="contact-links">
+          <a href="#" class="contact-link"><span class="icon">📱</span>+54 9 11 0000-0000</a>
+          <a href="#" class="contact-link"><span class="icon">✉</span>hola@orbitarecords.com.ar</a>
+          <a href="#" class="contact-link"><span class="icon">📸</span>@orbitarecords</a>
+          <a href="#" class="contact-link"><span class="icon">📍</span>Buenos Aires, Argentina</a>
+        </div>
+      </div>
+      <div class="contacto-form">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" placeholder="Tu nombre" />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="tu@email.com" />
+        </div>
+        <div class="form-group">
+          <label>Servicio de interés</label>
+          <select>
+            <option value="">Seleccioná un servicio</option>
+            <option>Producción musical</option>
+            <option>Jingles / Publicidad</option>
+            <option>Cine, TV o Videojuegos</option>
+            <option>Mixing &amp; Mastering</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Mensaje</label>
+          <textarea placeholder="Contanos sobre tu proyecto..."></textarea>
+        </div>
+        <button class="form-submit">Enviar mensaje</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">Órbita <span>Records</span></div>
+          <p>Productora musical con más de 15 años en el mercado latinoamericano. Buenos Aires, Argentina.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Servicios</h5>
+          <ul>
+            <li><a href="#servicios">Producción Musical</a></li>
+            <li><a href="#servicios">Jingles &amp; Publicidad</a></li>
+            <li><a href="#servicios">Cine, TV &amp; Videojuegos</a></li>
+            <li><a href="#servicios">Mixing &amp; Mastering</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Empresa</h5>
+          <ul>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#clientes">Clientes</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Órbita Records. Todos los derechos reservados.<br />Diseñado y programado con P5.js, HTML &amp; CSS.</p>
+        <div class="footer-cursada">
+          Carrera: Diseño Multimedial<br />
+          Materia: Diseño y Programación Web I<br />
+          Turno: Mañana · Comisión: DMM3CP<br />
+          Docente: Antonio Rubio<br />
+          Integrantes: Ramiro Sosa · Luca Repetto · Mateo Soto Gauna<br />
+          Mayo 2025
+        </div>
+      </div>
+    </div>
+  </footer>
+<div id="artist-tooltip" style="display:none; position:fixed; background:#e8c547; color:#000; padding:8px 12px; border-radius:4px; z-index:10000; pointer-events:none;"></div>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
