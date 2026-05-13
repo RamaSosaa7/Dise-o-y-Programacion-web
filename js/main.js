@@ -1,8 +1,3 @@
-/* ==========================================
-   ÓRBITA RECORDS — JavaScript principal
-   ========================================== */
-
-/* ======= CURSOR PERSONALIZADO ======= */
 const cur = document.getElementById('cursor');
 const ring = document.getElementById('cursor-ring');
 let mx = 0, my = 0, rx = 0, ry = 0;
@@ -20,8 +15,6 @@ function animCursor() {
 }
 animCursor();
 
-
-/* ======= DISCO VINILO — P5.js ======= */
 const discoContainer = document.getElementById('disco-canvas').parentElement;
 
 new p5(function(p) {
@@ -29,11 +22,9 @@ new p5(function(p) {
   let isHovered = false;
   let currentX, currentY;
   let img; 
-
-  let maskGraphics; // Nueva variable
+  let maskGraphics;
 
   p.preload = function() {
-    // Asegúrate de que el nombre coincida con tu archivo
     img = p.loadImage('imgs/disco.jpg'); 
   };
 
@@ -47,50 +38,42 @@ new p5(function(p) {
     currentX = p.width / 2;
     currentY = p.height / 2;
 
-    // --- AQUÍ PODRÁS CARGAR TU IMAGEN ---
-    // Cuando tengas el archivo (ej: portada.jpg), descomenta la línea de abajo:
     img = p.loadImage('imgs/disco.jpg'); 
 
     cnv.mouseOver(() => isHovered = true);
     cnv.mouseOut(() => isHovered = false);
- maskGraphics = p.createGraphics(110, 110);
-  maskGraphics.circle(55, 55, 110); // Dibujamos el círculo que servirá de recorte
+  maskGraphics = p.createGraphics(110, 110);
+  maskGraphics.circle(55, 55, 110);
 };
 
 p.draw = function() {
     p.clear();
 
-    // 1. FORZAMOS EL CENTRO (Para que no se mueva)
     currentX = p.width / 2;
     currentY = p.height / 2;
 
-    // 2. ROTACIÓN MANUAL (Solo si el mouse está encima)
     if (isHovered) {
       let mouseSpeed = p.mouseY - p.pmouseY; 
-      angle += mouseSpeed * 0.02; // Ajustá el 0.02 para más o menos sensibilidad
+      angle += mouseSpeed * 0.02;
     }
 
-    // 3. DIBUJO DEL DISCO
     p.push();
     p.translate(currentX, currentY);
     p.rotate(angle); 
 
-    // Cuerpo negro
     p.fill(15);
     p.stroke(40);
     p.strokeWeight(2);
     p.circle(0, 0, 320);
 
-    // Surcos
     p.noFill();
     p.stroke(255, 15);
     for (let d = 130; d < 310; d += 15) {
       p.circle(0, 0, d);
     }
 
-    // --- LA IMAGEN (Solo la circular) ---
     if (img && maskGraphics) {
-      img.mask(maskGraphics); // Esto la hace redonda
+      img.mask(maskGraphics);
       p.imageMode(p.CENTER);
       p.image(img, 0, 0, 110, 110); 
     } else {
@@ -99,17 +82,14 @@ p.draw = function() {
       p.circle(0, 0, 100);
     }
 
-    // Agujero central
     p.fill(10);
     p.noStroke();
     p.circle(0, 0, 15);
 
-    p.pop(); // Cerramos la transformación
+    p.pop();
   };
 }, discoContainer);
 
-
-/* ======= CARRUSEL DE PROYECTOS — Canvas 2D ======= */
 (function() {
   const proyectos = [
     { title: 'Ameri',      artist: 'Duki',  cat: 'Producción Musical', color: '#e8c547' },
@@ -147,18 +127,15 @@ p.draw = function() {
     ctx.roundRect(x, y, CARD_W, CARD_H, CARD_RADIUS);
     ctx.clip();
 
-    // Fondo degradado
     let grad = ctx.createLinearGradient(x, y, x + CARD_W, y + CARD_H);
     grad.addColorStop(0, '#1a1a1a');
     grad.addColorStop(1, '#111');
     ctx.fillStyle = grad;
     ctx.fill();
 
-    // Barra de color superior
     ctx.fillStyle = v.color;
     ctx.fillRect(x, y, CARD_W, 3);
 
-    // Forma de onda decorativa
     ctx.beginPath();
     ctx.strokeStyle = v.color + '18';
     ctx.lineWidth = 1;
@@ -168,13 +145,11 @@ p.draw = function() {
     }
     ctx.stroke();
 
-    // Círculo decorativo
     ctx.beginPath();
     ctx.arc(x + CARD_W - 40, y + 40, 80, 0, Math.PI * 2);
     ctx.fillStyle = v.color + '08';
     ctx.fill();
 
-    // Badge de categoría
     ctx.font = '600 10px DM Sans, sans-serif';
     let tw = ctx.measureText(v.cat).width + 24;
     ctx.fillStyle = v.color + '22';
@@ -184,17 +159,14 @@ p.draw = function() {
     ctx.fillStyle = v.color;
     ctx.fillText(v.cat, x + 28, y + 33);
 
-    // Título
     ctx.fillStyle = '#f0ede6';
     ctx.font = 'italic 700 22px DM Serif Display, serif';
     ctx.fillText(v.title, x + 16, y + 80);
 
-    // Artista
     ctx.fillStyle = '#888';
     ctx.font = '300 13px DM Sans, sans-serif';
     ctx.fillText(v.artist, x + 16, y + 100);
 
-    // Hover: overlay + botón play
     if (isHover) {
       ctx.fillStyle = 'rgba(0,0,0,0.45)';
       ctx.fillRect(x, y, CARD_W, CARD_H);
@@ -224,7 +196,6 @@ p.draw = function() {
     }
     ctx.restore();
 
-    // Borde hover
     if (isHover) {
       ctx.save();
       ctx.beginPath();
@@ -273,8 +244,6 @@ p.draw = function() {
   });
 })();
 
-
-/* ======= MARQUEE DE CLIENTES — Canvas 2D ======= */
 (function() {
   const clientes = [
     'Tini', 'Trueno', 'Duki', 'Bizarrap', 'Luciano Pereyra',
@@ -309,7 +278,6 @@ p.draw = function() {
         let ix = x + (rep * total) + i * itemW;
         if (ix > W + 20) continue;
 
-        // Píldora
         let tw = ctx.measureText(items[i]).width + 32;
         ctx.fillStyle = 'rgba(255,255,255,0.04)';
         ctx.beginPath();
@@ -319,13 +287,11 @@ p.draw = function() {
         ctx.lineWidth = 1;
         ctx.stroke();
 
-        // Punto de color
         ctx.fillStyle = accent;
         ctx.beginPath();
         ctx.arc(ix + 14, y + 18, 3, 0, Math.PI * 2);
         ctx.fill();
 
-        // Texto
         ctx.fillStyle = '#999';
         ctx.fillText(items[i], ix + 24, y + 23);
       }
@@ -340,7 +306,6 @@ p.draw = function() {
     offset1 = drawRow(clientes.slice(0, 13), 20,  0.5,  offset1, '#e8c547');
     offset2 = drawRow(clientes.slice(12),    80,  0.35, offset2, '#ff5733');
 
-    // Fundidos en los bordes
     let fadew = 80;
     let lg = ctx.createLinearGradient(0, 0, fadew, 0);
     lg.addColorStop(0, 'rgba(17,17,17,1)');
@@ -356,8 +321,6 @@ p.draw = function() {
   animate();
 })();
 
-
-/* ======= ANIMACIÓN DE ENTRADA AL SCROLL ======= */
 const obs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
